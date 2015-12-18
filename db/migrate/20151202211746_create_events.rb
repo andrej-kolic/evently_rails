@@ -7,7 +7,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :location
       t.datetime :start_time
 
-      t.belongs_to :user, index:true
+      t.belongs_to :user, index:true, null:false
 
       t.timestamps null: false
     end
@@ -15,9 +15,10 @@ class CreateEvents < ActiveRecord::Migration
 
     create_table :users do |t|
       t.string :username, null:false
-      t.string :password, null:false
+      t.string :password
       t.text :notes
       t.boolean :admin
+      t.string :authentication_token
 
       t.timestamps null: false
     end

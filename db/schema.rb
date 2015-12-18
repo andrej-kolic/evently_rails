@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20151202211746) do
     t.string   "description"
     t.string   "location"
     t.datetime "start_time"
-    t.integer  "user_id"
+    t.integer  "user_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -26,12 +26,13 @@ ActiveRecord::Schema.define(version: 20151202211746) do
   add_index "events", ["user_id"], name: "index_events_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",   null: false
-    t.string   "password",   null: false
+    t.string   "username",             null: false
+    t.string   "password"
     t.text     "notes"
     t.boolean  "admin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "authentication_token"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
 end
