@@ -12,13 +12,17 @@ users = User.create!(
             id: 1,
             username: 'admin',
             password: 'admin',
-            admin: true
+            admin: true,
+
+            # for Postman
+            authentication_token: 'a6JDawrxIBlch70LzUAKNU8Nf11TTEe2sx3D+ueu/8MxcEgWklUUrR6wcwoGDkbViswe4d8R74NthfoH16vxtA=='
         },
         {
             id: 2,
             username: 'andrej',
             password: 'trodon',
-            admin: false
+            admin: false,
+            authentication_token: '2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222'
         },
         {
             id: 3,

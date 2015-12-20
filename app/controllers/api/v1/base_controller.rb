@@ -47,7 +47,7 @@ module Api
 
       def unauthenticated!
         response.headers['WWW-Authenticate'] = "Token realm=Application"
-        render json: { error: 'Bad credentials' }, status: 401
+        render json: { error: 'unauthenticated' }, status: 401
       end
 
 
