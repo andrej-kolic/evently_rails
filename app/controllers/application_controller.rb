@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
   #protect_from_forgery with: :null_session
 
 
+  def ping
+    render json: {message: 'pong'}
+  end
+
   private
 
   def current_user
